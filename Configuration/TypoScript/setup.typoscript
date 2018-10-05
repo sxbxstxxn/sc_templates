@@ -23,6 +23,10 @@ page.10 {
 
 }
 
+#[globalVar = TSFE:page|layout = startseite]
+#page.bodyTagAdd = class="startseite"
+#[global]
+
 page.shortcutIcon = typo3conf/ext/sc_template/Resources/Public/Icons/favicons/favicon.ico
 
 page.headerData {
@@ -60,6 +64,10 @@ page.headerData {
     160.value = <meta name="msapplication-TileImage" content="typo3conf/ext/sc_template/Resources/Public/Icons/favicons/ms-icon-144x144.png">
     170 = TEXT
     170.value = <meta name="theme-color" content="#ffffff">
+}
+
+page.includeCSS {
+    maincss = EXT:sc_template/Resources/Public/Css/style.css
 }
 
 # Localization:

@@ -1,0 +1,10 @@
+/*
+red: #B40404
+darkgrey: #424242;
+grey: #cccccc;
+ */
+body {
+    margin:0;
+    background-color:#424242;
+    color:#cccccc;
+}
