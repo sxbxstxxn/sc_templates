@@ -1,0 +1,43 @@
+#SETUP
+page = PAGE
+page.10 = TEXT
+page.10.value = Under Construction...
+
+page.shortcutIcon = typo3conf/ext/sc_template/Resources/Public/Icons/favicons/favicon.ico
+
+page.headerData {
+    10 = TEXT
+    10.value = <link rel="apple-touch-icon" sizes="57x57" href="typo3conf/ext/sc_template/Resources/Public/Icons/favicons/apple-icon-57x57.png">
+    20 = TEXT
+    20.value = <link rel="apple-touch-icon" sizes="60x60" href="typo3conf/ext/sc_template/Resources/Public/Icons/favicons/apple-icon-60x60.png">
+    30 = TEXT
+    30.value = <link rel="apple-touch-icon" sizes="72x72" href="typo3conf/ext/sc_template/Resources/Public/Icons/favicons/apple-icon-72x72.png">
+    40 = TEXT
+    40.value = <link rel="apple-touch-icon" sizes="76x76" href="typo3conf/ext/sc_template/Resources/Public/Icons/favicons/apple-icon-76x76.png">
+    50 = TEXT
+    50.value = <link rel="apple-touch-icon" sizes="114x114" href="typo3conf/ext/sc_template/Resources/Public/Icons/favicons/apple-icon-114x114.png">
+    60 = TEXT
+    60.value = <link rel="apple-touch-icon" sizes="120x120" href="typo3conf/ext/sc_template/Resources/Public/Icons/favicons/apple-icon-120x120.png">
+    70 = TEXT
+    70.value = <link rel="apple-touch-icon" sizes="144x144" href="typo3conf/ext/sc_template/Resources/Public/Icons/favicons/apple-icon-144x144.png">
+    80 = TEXT
+    80.value = <link rel="apple-touch-icon" sizes="152x152" href="typo3conf/ext/sc_template/Resources/Public/Icons/favicons/apple-icon-152x152.png">
+    90 = TEXT
+    90.value = <link rel="apple-touch-icon" sizes="180x180" href="typo3conf/ext/sc_template/Resources/Public/Icons/favicons/apple-icon-180x180.png">
+    100 = TEXT
+    100.value = <link rel="icon" type="image/png" sizes="192x192"  href="typo3conf/ext/sc_template/Resources/Public/Icons/favicons/android-icon-192x192.png">
+    110 = TEXT
+    110.value = <link rel="icon" type="image/png" sizes="32x32" href="typo3conf/ext/sc_template/Resources/Public/Icons/favicons/favicon-32x32.png">
+    120 = TEXT
+    120.value = <link rel="icon" type="image/png" sizes="96x96" href="typo3conf/ext/sc_template/Resources/Public/Icons/favicons/favicon-96x96.png">
+    130 = TEXT
+    130.value = <link rel="icon" type="image/png" sizes="16x16" href="typo3conf/ext/sc_template/Resources/Public/Icons/favicons/favicon-16x16.png">
+    140 = TEXT
+    140.value = <link rel="manifest" href="typo3conf/ext/sc_template/Resources/Public/Icons/favicons/manifest.json">
+    150 = TEXT
+    150.value = <meta name="msapplication-TileColor" content="#ffffff">
+    160 = TEXT
+    160.value = <meta name="msapplication-TileImage" content="typo3conf/ext/sc_template/Resources/Public/Icons/favicons/ms-icon-144x144.png">
+    170 = TEXT
+    170.value = <meta name="theme-color" content="#ffffff">
+}
