@@ -1,7 +1,27 @@
 #SETUP
 page = PAGE
-page.10 = TEXT
-page.10.value = Under Construction...
+page.10 = FLUIDTEMPLATE
+page.10 {
+    templateName = Default
+    layoutRootPaths.1 = EXT:sc_template/Resources/Private/Layouts/
+    templateRootPaths.1 = EXT:sc_template/Resources/Private/Templates/
+    partialRootPaths.1 = EXT:sc_template/Resources/Private/Partials/
+
+    templateName.stdWrap.cObject = CASE
+        templateName.stdWrap.cObject {
+            key.data = pagelayout
+
+            default = TEXT
+            default.value = Default
+
+            pagets__startseite = TEXT
+            pagets__startseite.value = Startseite
+
+            pagets__2spaltig = TEXT
+            pagets__2spaltig.value = 2spaltig
+        }
+
+}
 
 page.shortcutIcon = typo3conf/ext/sc_template/Resources/Public/Icons/favicons/favicon.ico
 
@@ -41,3 +61,12 @@ page.headerData {
     170 = TEXT
     170.value = <meta name="theme-color" content="#ffffff">
 }
+
+# Localization:
+#default-Konfiguration
+config.sys_language_uid = 0
+config.language = de
+config.locale_all = de_DE
+config.htmlTag_langKey = de
+
+config.contentObjectExceptionHandler = 0

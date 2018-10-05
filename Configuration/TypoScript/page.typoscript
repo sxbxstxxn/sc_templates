@@ -1,0 +1,47 @@
+mod.SHARED {
+    defaultLanguageFlag = de
+    defaultLanguageLabel = deutsch
+}
+mod.web_layout.BackendLayouts {
+  startseite {
+    title = Startseite
+    #icon = EXT:sc_templates/Resources/Public/Icons/Extension.png
+    config {
+      backend_layout {
+        colCount = 1
+        rowCount = 1
+        rows {
+          1 {
+            columns {
+              1 {
+                name = Mitte
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  2spaltig {
+    title = 2spaltig
+    #icon = EXT:sc_templates/Resources/Public/Icons/Extension.png
+    config {
+      backend_layout {
+        colCount = 2
+        rowCount = 1
+        rows {
+          1 {
+            columns {
+              1 {
+                name = Links
+              }
+              2 {
+                name = Rechts
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
