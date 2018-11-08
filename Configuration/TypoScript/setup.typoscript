@@ -21,6 +21,24 @@ page.10 {
             pagets__2spaltig.value = 2spaltig
         }
 
+    dataProcessing {
+      10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+      10 {
+         special = directory
+         special.value = {$sctemplate_rootpageid}
+         levels = 7
+         entryLevel = 0      
+         as = menu
+         expandAll = 1
+         titleField = nav_title // title
+         dataProcessing {
+          10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+            10 {
+              references.fieldName = media
+            }
+          }         
+      } 
+    }
 }
 
 #[globalVar = TSFE:page|layout = startseite]

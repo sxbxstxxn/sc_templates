@@ -6,6 +6,13 @@
 
     <f:section name="nav">
         <nav class="default">Nav Default</nav>
+            <f:debug>{menu}</f:debug>
+         <f:for each="{menu}" as="main">
+                  {main.title}
+            <f:for each="{main.children}" as="child">
+              {child.title}
+           </f:for>
+         </f:for>
     </f:section>
 
     <f:section name="main">
