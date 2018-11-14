@@ -1,3 +1,27 @@
+lib.dynamicContent = COA
+lib.dynamicContent {
+   10 = LOAD_REGISTER
+   10.colPos.cObject = TEXT
+   10.colPos.cObject {
+      field = colPos
+      ifEmpty.cObject = TEXT
+      ifEmpty.cObject {
+         value.current = 1
+         ifEmpty = 0
+      }
+   }
+   20 = CONTENT
+   20 {
+      table = tt_content
+      select {
+         orderBy = sorting
+         where = colPos={register:colPos}
+         where.insertData = 1
+      }
+   }
+   90 = RESTORE_REGISTER
+}
+
 #SETUP
 page = PAGE
 page.10 = FLUIDTEMPLATE
@@ -48,6 +72,8 @@ page.10 {
 page.shortcutIcon = typo3conf/ext/sc_template/Resources/Public/Icons/favicons/favicon.ico
 
 page.headerData {
+    1 = TEXT
+    1.value = <meta name="viewport" content="width=device-width, initial-scale=1.0">
     10 = TEXT
     10.value = <link rel="apple-touch-icon" sizes="57x57" href="typo3conf/ext/sc_template/Resources/Public/Icons/favicons/apple-icon-57x57.png">
     20 = TEXT
@@ -82,10 +108,19 @@ page.headerData {
     160.value = <meta name="msapplication-TileImage" content="typo3conf/ext/sc_template/Resources/Public/Icons/favicons/ms-icon-144x144.png">
     170 = TEXT
     170.value = <meta name="theme-color" content="#ffffff">
+    190 = TEXT
+    190.value = <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    #necessary for menu icon dropdown and responsive icon
+    200 = TEXT
+    200.value = <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 }
 
 page.includeCSS {
     maincss = EXT:sc_template/Resources/Public/Css/style.css
+}
+
+page.includeJSFooter {
+    navigation = EXT:sc_template/Resources/Public/JavaScript/navigation.js
 }
 
 # Localization:

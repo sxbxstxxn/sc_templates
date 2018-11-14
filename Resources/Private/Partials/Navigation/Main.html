@@ -1,7 +1,22 @@
-<nav class="default">Nav Default</nav>
-
-<f:debug>{menu}</f:debug>
-<f:for each="{menu}" as="main">
-  {main.title}
-
-</f:for>
+<div class="topnav" id="myTopnav">
+  <f:for each="{menu}" as="main">    
+    <f:if condition="{main.children}">
+      <f:then>
+        <div class="dropdown">
+          <button class="dropbtn">{main.title}
+            <i class="fa fa-caret-down"></i>
+          </button>                    
+          <div class="dropdown-content">
+            <f:for each="{main.children}" as="child">
+              <a href="{child.link}">{child.title}</a>
+            </f:for> 
+          </div>
+        </div>         
+      </f:then>
+      <f:else>
+        <a href="{main.link}" {f:if(condition: '{main.active}', then: 'class="active"')}>{main.title}</a>  
+      </f:else>  
+    </f:if>
+  </f:for>  
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+</div>

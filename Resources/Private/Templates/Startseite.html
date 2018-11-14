@@ -1,19 +1,16 @@
 <f:layout name="Default" />
 
     <f:section name="header">
-        <header class="startseite">Header Startseite</header>
-    </f:section>
-
-    <f:section name="nav">     
-      <f:render partial="Navigation/Main" arguments="{menu: menu}"/>     
+        <f:render partial="Header" arguments="{menu: menu}"/>    
     </f:section>
 
     <f:section name="main">
         <main class="startseite">
-            Startseite
+            <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: '0'}" />
         </main>
     </f:section>
 
     <f:section name="footer">
-        <footer class="startseite">Footer Startseite</footer>
+        <f:render partial="Footer"/>
     </f:section>
+
