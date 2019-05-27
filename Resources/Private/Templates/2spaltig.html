@@ -6,7 +6,12 @@
 
     <f:section name="main">
         <main class="2spaltig">
-            <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: '0'}" />
+            <div class="left">
+                <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: '1'}" />
+            </div>
+            <div class="right">
+                <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: '2'}" />
+            </div>
         </main>
     </f:section>
 
