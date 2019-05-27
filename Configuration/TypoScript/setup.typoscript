@@ -72,8 +72,20 @@ page.10 {
 page.shortcutIcon = typo3conf/ext/sc_template/Resources/Public/Icons/favicons/favicon.ico
 
 page.headerData {
-    1 = TEXT
-    1.value = <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    1 = COA
+    1 {
+        10 = TEXT
+        10 {
+            value = {page:title}
+            insertData = 1
+            #ifEmpty = TEXT
+            ifEmpty.value = x
+            wrap =  Nerdwolf:&nbsp; |
+        }
+        wrap = <title>|</title>
+    }
+    5 = TEXT
+    5.value = <meta name="viewport" content="width=device-width, initial-scale=1.0">
     10 = TEXT
     10.value = <link rel="apple-touch-icon" sizes="57x57" href="typo3conf/ext/sc_template/Resources/Public/Icons/favicons/apple-icon-57x57.png">
     20 = TEXT
@@ -131,3 +143,19 @@ config.locale_all = de_DE
 config.htmlTag_langKey = de
 
 config.contentObjectExceptionHandler = 0
+
+config.noPageTitle = 2
+
+
+#FluidStyledContent Changes
+lib.contentElement {
+   templateRootPaths {
+      200 = EXT:sc_template/Resources/Private/Templates/Fluid/
+   }
+   partialRootPaths {
+      200 = EXT:sc_template/Resources/Private/Partials/Fluid/
+   }
+   layoutRootPaths {
+      200 = EXT:sc_template/Resources/Private/Layouts/Fluid/
+   }
+}

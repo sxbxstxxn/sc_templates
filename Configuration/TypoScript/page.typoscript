@@ -16,9 +16,6 @@ mod.web_layout.BackendLayouts {
               1 {
                 name = Mitte
                 colPos = 1
-                allowed {
-                  CType = text,textpic
-                }
               }
             }
           }
@@ -39,16 +36,10 @@ mod.web_layout.BackendLayouts {
               1 {
                 name = Links
                 colPos = 1
-                allowed {
-                  CType = text,textpic
-                }
               }
               2 {
                 name = Rechts
                 colPos = 2
-                allowed {
-                  CType = text,textpic
-                }
               }
             }
           }

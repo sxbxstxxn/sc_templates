@@ -39,9 +39,18 @@ body {
     /*color: #f2f2f2;*/
     color:#AAABB8;
     text-align: center;
-    padding: 15px 15px;
+    padding: 14px 14px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 16px;
+}
+
+.topnav a.homeicon {
+    background-image: url('../Images/nerdwolf.png');
+    background-size:50px;
+    height:50px;
+    width:50px;
+    background-repeat:no-repeat;
+    padding:0px;
 }
 
 /* Add an active class to highlight the current page */
@@ -165,7 +174,6 @@ footer {
   position: absolute;
   bottom:0;
   width:100%;
-  padding:15px;
   /*background-color: #333;*/
   background-color: #25274D;
   overflow: hidden;
