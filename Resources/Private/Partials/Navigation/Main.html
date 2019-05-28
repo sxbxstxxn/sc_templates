@@ -1,23 +1,17 @@
-<div class="topnav" id="myTopnav">
-  <a class="homeicon" href="/">&nbsp;</a>
-  <f:for each="{menu}" as="main">    
-    <f:if condition="{main.children}">
-      <f:then>
-        <div class="dropdown">
-          <button class="dropbtn">{main.title}
-            <i class="fa fa-caret-down"></i>
-          </button>                    
-          <div class="dropdown-content">
-            <f:for each="{main.children}" as="child">
-              <a href="{child.link}">{child.title}</a>
-            </f:for> 
-          </div>
-        </div>         
-      </f:then>
-      <f:else>
-        <a href="{main.link}" {f:if(condition: '{main.active}', then: 'class="active"')}>{main.title}</a>  
-      </f:else>  
-    </f:if>
-  </f:for>  
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
-</div>
+<nav>
+  <div class="nav-wrapper">
+    <a href="/" class="brand-logo"></a>
+    <a href="/" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <f:for each="{menu}" as="main">
+        <li {f:if(condition: '{main.active}', then: 'class="active"')}><a href="{main.link}">{main.title}</a> </li>
+      </f:for>
+    </ul>
+  </div>
+</nav>
+
+<ul class="sidenav" id="mobile-demo">
+  <f:for each="{menu}" as="main">
+    <li {f:if(condition: '{main.active}', then: 'class="active"')}><a href="{main.link}">{main.title}</a> </li>
+  </f:for>
+</ul>

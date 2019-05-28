@@ -48,3 +48,67 @@ mod.web_layout.BackendLayouts {
     }
   }
 }
+
+TCEFORM.tt_content.CType {
+ removeItems = textpic, textmedia, image, bullets, table, uploads, multimedia, media,mailform, search, menu, shortcut, html, script, splash, div, list, form_formframework, menu_abstract, menu_categorized_content, menu_categorized_pages, menu_pages, menu_subpages, menu_recently_updated, menu_related_pages, menu_section, menu_section_pages, menu_sitemap, menu_sitemap_pages
+}
+
+TCEFORM.tt_content.header_layout {
+  removeItems = 0,1,2,3,4,5,100
+}
+
+TCEFORM.tt_content {
+    header_layout.disabled = 1
+    header_position.disabled = 1
+    date.disabled = 1
+    layout.disabled = 1
+    frame_class.disabled = 1
+    space_before_class.disabled = 1
+    space_after_class.disabled = 1
+    linkToTop.disabled = 1
+    categories.disabled = 1
+    rowDescription.disabled = 1
+}
+
+TCEFORM.pages {
+    nav_title.disabled = 1
+    subtitle.disabled = 1
+    #SEO
+    seo_title.disabled = 1
+    no_index.disabled = 1
+    no_follow.disabled = 1
+    canonical_link.disabled = 1
+    #SOCIAL MEDIA
+    og_title.disabled = 1
+    og_description.disabled = 1
+    og_image.disabled = 1
+    twitter_title.disabled = 1
+    twitter_description.disabled = 1
+    twitter_image.disabled = 1
+    #METADATA
+    abstract.disabled = 1
+    keywords.disabled = 1
+    description.disabled = 1
+    author.disabled = 1
+    author_email.disabled = 1
+    lastUpdated.disabled = 1
+    #LAYOUT
+    layout.disabled = 1
+    newUntil.disabled = 1
+    #VERHALTEN
+    target.disabled = 1
+    cache_timeout.disabled = 1
+    cache_tags.disabled = 1
+    is_siteroot.disabled = 1
+    no_search.disabled = 1
+    php_tree_stop.disabled = 1
+    module.disabled = 1
+    #RESOURCES
+    tsconfig_includes.disabled = 1
+    TSconfig.disabled = 1
+    #LANGUAGE
+    l18n_cfg.disabled = 1
+    #CATEGORIES
+    categories.disabled = 1
+    rowDescription.disabled = 1
+}

@@ -6,15 +6,17 @@
 
     <f:section name="main">
         <main class="2spaltig">
-            <div class="left">
-                <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: '1'}" />
-            </div>
-            <div class="right">
-                <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: '2'}" />
+            <div class="row">
+                <div class="col s6">
+                    <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: '1'}" />
+                </div>
+                <div class="col s6">
+                    <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: '2'}" />
+                </div>
             </div>
         </main>
     </f:section>
 
     <f:section name="footer">
-        <f:render partial="Footer"/>
+        <f:render partial="Footer" arguments="{footermenu: footermenu}"/>
     </f:section>

@@ -1,0 +1,5 @@
+<ul>
+    <f:for each="{footermenu}" as="main">
+        <li {f:if(condition: '{main.active}', then: 'class="active"')}><a href="{main.link}">{main.title}</a> </li>
+    </f:for>
+</ul>
