@@ -14,6 +14,10 @@ middleblue:#29648A;
   margin:0;
 }
 
+html {
+    font-family: 'Open Sans', sans-serif;
+}
+
 a, a:visited {
     color:#AAABB8;
 }
@@ -43,10 +47,6 @@ nav .brand-logo {
 nav ul a,
 .sidenav li>a {
     color:#AAABB8;
-}
-nav ul a {
-    font-size:20px;
-    font-weight:bold;
 }
 
 nav ul li.active,

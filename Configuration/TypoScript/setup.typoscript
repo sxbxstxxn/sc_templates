@@ -192,3 +192,5 @@ lib.contentElement {
       200 = EXT:sc_template/Resources/Private/Layouts/Fluid/
    }
 }
+
+plugin.tx_felogin_pi1.storagePid = {$sctemplate_feuserstorage}
