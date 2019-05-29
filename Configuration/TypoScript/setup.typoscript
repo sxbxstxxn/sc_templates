@@ -194,3 +194,15 @@ lib.contentElement {
 }
 
 plugin.tx_felogin_pi1.storagePid = {$sctemplate_feuserstorage}
+plugin.tx_felogin_pi1.templateFile = EXT:sc_template/Resources/Private/Templates/FELogin/FrontendLogin.html
+
+plugin.tx_felogin_pi1.showPermaLogin = 1
+plugin.tx_felogin_pi1.showForgotPasswordLink = 1
+plugin.tx_felogin_pi1.showLogoutFormAfterLogin = 1
+plugin.tx_felogin_pi1.linkConfig.ATagParams = class="waves-effect waves-light btn col s3"
+plugin.tx_felogin_pi1.forgot.typolink.title = Passwort vergessen?
+
+plugin.tx_felogin_pi1.logoutMessage_stdWrap.wrap = <div class="col s12 msg-logout">|</div>
+plugin.tx_felogin_pi1.welcomeMessage_stdWrap.wrap = <div class="col s12 msg-welcome">|</div>
+plugin.tx_felogin_pi1.successMessage_stdWrap.wrap = <div class="col s12 msg-success">|</div>
+plugin.tx_felogin_pi1.errorMessage_stdWrap.wrap = <div class="col s12 msg-error">|</div>

@@ -14,22 +14,74 @@ middleblue:#29648A;
   margin:0;
 }
 
-html {
+html, button, input, optgroup, select, textarea {
     font-family: 'Open Sans', sans-serif;
+    color:#AAABB8;
 }
 
-a, a:visited {
+a, a:visited, input, button {
     color:#AAABB8;
 }
 a:hover {
-    color:#
+    color:#999AA7;
 }
+
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    -webkit-text-fill-color: #AAABB8 !important;;
+    -webkit-box-shadow: 0 0 0px 1000px #464866 inset !important;
+    /*color:#AAABB8 !important;*/
+}
+
+/*MATERIALIZE ANGABEN ÄNDERN*/
+.input-field input::placeholder,
+.input-field input:disabled {
+    color:#777885 !important;
+}
+
+.input-field > label {
+    color: #AAABB8 !important;
+}
+/* label focus color */
+.input-field input:focus + label {
+    color: #AAABB8 !important;
+}
+/* label underline focus color */
+.input-field input:focus {
+    border-bottom: 1px solid #AAABB8 !important;
+    box-shadow: 0 1px 0 0 #AAABB8 !important;
+}
+
+.input-field input:disabled {
+    border-bottom: 1px solid #777885 !important;
+}
+.btn, a.btn {
+    background-color:#AAABB8;
+    color:#25274D;
+}
+.btn:hover, .btn:focus, .btn:active {
+    background-color:#999AA7;
+}
+.btn:focus, .btn:active {
+    box-shadow: none;
+}
+/*MATERIALIZE END*/
 
 body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
 }
+
+
 
 /* NAVIGATION BEGIN */
 nav,
@@ -69,9 +121,20 @@ nav ul li:hover,
 main {
     flex: 1 0 auto;
     background-color:#464866;
+    padding-top:25px;
+    padding-bottom:25px;
 }
 /* MAIN END */
 
+
+/*LOGIN FORM*/
+.loginsubmit {
+    /*float:right;*/
+}
+.msg-error {
+    color:#DD0000;
+}
+/*LOGIN FORM END*/
 
 /* FOOTER BEGIN */
 .page-footer {
