@@ -193,16 +193,40 @@ lib.contentElement {
    }
 }
 
-plugin.tx_felogin_pi1.storagePid = {$sctemplate_feuserstorage}
-plugin.tx_felogin_pi1.templateFile = EXT:sc_template/Resources/Private/Templates/FELogin/FrontendLogin.html
+# FE LOGIN Config
+plugin.tx_felogin_pi1 {
+    storagePid = {$sctemplate_feuserstorage}
+    templateFile = EXT:sc_template/Resources/Private/Templates/FELogin/FrontendLogin.html
 
-plugin.tx_felogin_pi1.showPermaLogin = 1
-plugin.tx_felogin_pi1.showForgotPasswordLink = 1
-plugin.tx_felogin_pi1.showLogoutFormAfterLogin = 1
-plugin.tx_felogin_pi1.linkConfig.ATagParams = class="waves-effect waves-light btn col s3"
-plugin.tx_felogin_pi1.forgot.typolink.title = Passwort vergessen?
+    showPermaLogin = 1
+    showForgotPasswordLink = 1
+    showLogoutFormAfterLogin = 1
+    linkConfig.ATagParams = class="waves-effect waves-light btn col s3"
+    forgot.typolink.title = Passwort vergessen?
+    forgetLinkHashValidTime = 24
+    dateFormat = d.M Y - H:i
 
-plugin.tx_felogin_pi1.logoutMessage_stdWrap.wrap = <div class="col s12 msg-logout">|</div>
-plugin.tx_felogin_pi1.welcomeMessage_stdWrap.wrap = <div class="col s12 msg-welcome">|</div>
-plugin.tx_felogin_pi1.successMessage_stdWrap.wrap = <div class="col s12 msg-success">|</div>
-plugin.tx_felogin_pi1.errorMessage_stdWrap.wrap = <div class="col s12 msg-error">|</div>
+    email_from = donotreply@nerdwolf.eu
+    email_fromName = Nerdwolf
+    replyTo = donotreply@nerdwolf.eu
+
+    logoutMessage_stdWrap.wrap = <div class="col s12 msg-logout">|</div>
+    welcomeMessage_stdWrap.wrap = <div class="col s12 msg-welcome">|</div>
+    successMessage_stdWrap.wrap = <div class="col s12 msg-success">|</div>
+    errorMessage_stdWrap.wrap = <div class="col s12 msg-error">|</div>
+    forgotMessage_stdWrap.wrap = <div class="col s12 msg-forgot">|</div>
+    forgotErrorMessage_stdWrap.wrap = <div class="col s12 msg-forgoterror">|</div>
+    changePasswordMessage_stdWrap.wrap = <div class="col s12 msg-changepassword">|</div>
+    changePasswordDoneMessage_stdWrap.wrap = <div class="col s12 msg-changepassworddone">|</div>
+    changePasswordNotEqualMessage_stdWrap.wrap = <div class="col s12 msg-changepasswordnotequal">|</div>
+    changePasswordTooShortMessage_stdWrap.wrap = <div class="col s12 msg-changepasswordtooshort">|</div>
+    changePasswordNotValidMessage_stdWrap.wrap = <div class="col s12 msg-changepasswordnotvalid">|</div>
+
+    redirectMode = login
+    redirectPageLogin = 144
+    showLogoutFormAfterLogin = 0
+}
+
+#FE MANAGER Config
+module.tx_femanager.settings.configPID = 14
+

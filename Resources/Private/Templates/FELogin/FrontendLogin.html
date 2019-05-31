@@ -43,24 +43,17 @@
 </ul>
 
 <!--###TEMPLATE_LOGIN###-->
-
-
-
+<div class="row">###STATUS_MESSAGE###</div>
 <!-- ###LOGIN_FORM### -->
-<form class="loginform col s12" action="###ACTION_URI###" target="_top" method="post" onsubmit="###ON_SUBMIT###">
-	<div class="row">###STATUS_MESSAGE###</div>
-	<div class="row">
-		<div class="input-field col l6 m12 s12">
-			<input placeholder="###USERNAME_LABEL###" type="text" id="user" name="user" value=""  autocomplete="off"/>
-			<label for="user">###USERNAME_LABEL###</label>
-		</div>
-		<div class="input-field col l6 m12 s12">
-			<input placeholder="###PASSWORD_LABEL###" type="password" id="pass" name="pass" value="" data-rsa-encryption="" autocomplete="off" />
-			<label for="pass">###PASSWORD_LABEL###</label>
-		</div>
+<form class="loginform row" action="###ACTION_URI###" target="_top" method="post" onsubmit="###ON_SUBMIT###">
+	<div class="input-field col l6 m12 s12">
+		<input placeholder="###USERNAME_LABEL###" type="text" id="user" name="user" value=""  autocomplete="off"/>
+		<label for="user">###USERNAME_LABEL###</label>
 	</div>
-
-
+	<div class="input-field col l6 m12 s12">
+		<input placeholder="###PASSWORD_LABEL###" type="password" id="pass" name="pass" value="" data-rsa-encryption="" autocomplete="off" />
+		<label for="pass">###PASSWORD_LABEL###</label>
+	</div>
 	<!--###PERMALOGIN_VALID###-->
 	<div>
 		<label for="permalogin">###PERMALOGIN###</label>
@@ -68,7 +61,7 @@
 		<input name="permalogin" value="1" type="checkbox" ###PERMALOGIN_CHECKBOX_ATTRIBUTES### id="permalogin"  onclick="document.getElementById('permaloginHiddenField').disabled = this.checked;" />
 	</div>
 	<!--###PERMALOGIN_VALID###-->
-	<div class="row">
+	<div class="col s12">
 		<!--###FORGOTP_VALID###-->
 		<!--###FORGOT_PASSWORD_LINK###-->###FORGOT_PASSWORD###<!--###FORGOT_PASSWORD_LINK###-->
 		<!--###FORGOTP_VALID###-->
@@ -85,27 +78,21 @@
 	</div>
 
 </form>
-
-
-
 <!-- ###LOGIN_FORM### -->
-
 <!--###TEMPLATE_LOGIN###-->
 
 <!--###TEMPLATE_LOGOUT###-->
-<form class="logoutform col s12" action="###ACTION_URI###" target="_top" method="post">
-	<div class="row">###STATUS_MESSAGE###</div>
-	<div class="row">
-		<div class="input-field col l6 m12 s12">
-			<input placeholder="###USERNAME_LABEL###" type="text" id="user" name="user" value="###USERNAME###"  disabled/>
-			<label for="user">###USERNAME_LABEL###</label>
-		</div>
-    </div>
-	<div class="row">
-		<button class="loginsubmit btn waves-effect waves-light col s3 offset-s9" type="submit" name="action">###LOGOUT_LABEL###
-			<i class="material-icons right">send</i>
-		</button>
+<div class="row">###STATUS_MESSAGE###</div>
+<form class="logoutform row" action="###ACTION_URI###" target="_top" method="post">
+	<div class="input-field col l6 m12 s12">
+		<input placeholder="###USERNAME_LABEL###" type="text" id="user" name="user" value="###USERNAME###"  disabled/>
+		<label for="user">###USERNAME_LABEL###</label>
 	</div>
+
+	<button class="loginsubmit btn waves-effect waves-light col s3 offset-s9" type="submit" name="action">###LOGOUT_LABEL###
+		<i class="material-icons right">send</i>
+	</button>
+
 	<div class="felogin-hidden">
 		<input type="hidden" name="logintype" value="logout" />
 		<input type="hidden" name="pid" value="###STORAGE_PID###" />
@@ -113,23 +100,21 @@
 	</div>
 
 </form>
-
 <!--###TEMPLATE_LOGOUT###-->
 
 <!--###TEMPLATE_FORGOT###-->
+<div class="row">###STATUS_MESSAGE###</div>
 <!-- ###FORGOT_FORM### -->
-<form class="logoutform col s12" action="###ACTION_URI###" method="post">
-	<div class="row">###STATUS_MESSAGE###</div>
+<form class="logoutform row" action="###ACTION_URI###" method="post">
 	<div class="felogin-hidden">
 		<input type="hidden" name="tx_felogin_pi1[forgot_hash]" value="###FORGOTHASH###" />
 	</div>
-	<div class="row">
-		<div class="input-field col l6 m12 s12">
-			<input type="text" name="###FORGOT_EMAIL###" id="tx_felogin_pi1-forgot-email" />
-			<label for="tx_felogin_pi1-forgot-email">###DATA_LABEL###</label>
-		</div>
+
+	<div class="input-field col l6 m12 s12">
+		<input type="text" name="###FORGOT_EMAIL###" id="tx_felogin_pi1-forgot-email" />
+		<label for="tx_felogin_pi1-forgot-email">###DATA_LABEL###</label>
 	</div>
-	<div class="row">
+	<div class="col s12">
 		###BACKLINK_LOGIN###
 		<button class="loginsubmit btn waves-effect waves-light col s3 offset-s6" type="submit" name="action">###SEND_PASSWORD###
 			<i class="material-icons right">send</i>
@@ -137,33 +122,27 @@
 	</div>
 </form>
 <!-- ###FORGOT_FORM### -->
-
 <!--###TEMPLATE_FORGOT###-->
 
 <!--###TEMPLATE_CHANGEPASSWORD###-->
-
-###STATUS_HEADER###
-###STATUS_MESSAGE###
-
-
+<div class="row">###STATUS_MESSAGE###</div>
 <!-- ###CHANGEPASSWORD_FORM### -->
 <form action="###ACTION_URI###" method="post">
-	<fieldset>
-		<legend>###LEGEND###</legend>
-		<div>
-			<label for="tx_felogin_pi1-newpassword1">###NEWPASSWORD1_LABEL###</label>
+	<div class="row">
+		<div class="input-field col l6 m12 s12">
 			<input type="password" name="###NEWPASSWORD1###" id="tx_felogin_pi1-newpassword1" />
+			<label for="tx_felogin_pi1-newpassword1">###NEWPASSWORD1_LABEL###</label>
 		</div>
-		<div>
-			<label for="tx_felogin_pi1-newpassword2">###NEWPASSWORD2_LABEL###</label>
+		<div class="input-field col l6 m12 s12">
 			<input type="password" name="###NEWPASSWORD2###" id="tx_felogin_pi1-newpassword2" />
+			<label for="tx_felogin_pi1-newpassword2">###NEWPASSWORD2_LABEL###</label>
 		</div>
-		<div>
-			<input type="submit" name="tx_felogin_pi1[changepasswordsubmit]" value="###SEND_PASSWORD###" />
-		 </div>
-	</fieldset>
-
+	</div>
+	<div class="row">
+		<button class="changepw btn waves-effect waves-light col s3 offset-s9" type="submit" name="tx_felogin_pi1[changepasswordsubmit]">###SEND_PASSWORD###
+			<i class="material-icons right">send</i>
+		</button>
+	</div>
 </form>
 <!-- ###CHANGEPASSWORD_FORM### -->
-###BACKLINK_LOGIN###
 <!--###TEMPLATE_CHANGEPASSWORD###-->

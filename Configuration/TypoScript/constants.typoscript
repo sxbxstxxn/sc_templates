@@ -2,3 +2,38 @@
 sctemplate_rootpageid = 14
 sctemplate_footermenu = 142
 sctemplate_feuserstorage = 141
+
+plugin.tx_femanager {
+    view {
+        # cat=plugin.tx_femanager/file; type=string; label= Path to template root (FE)
+        templateRootPath = EXT:sc_template/Resources/Private/Templates/FEManager/
+        # cat=plugin.tx_femanager/file; type=string; label= Path to template partials (FE)
+        partialRootPath = EXT:sc_template/Resources/Private/Partials/FEManager/
+        # cat=plugin.tx_femanager/file; type=string; label= Path to template layouts (FE)
+        layoutRootPath = EXT:sc_template/Resources/Private/Layouts/FEManager/
+    }
+    persistence {
+        # cat=plugin.tx_femanager//a; type=int+; label= Default storage PID
+        storagePid = {$sctemplate_feuserstorage}
+    }
+    settings {
+        configPID = 14
+        # cat=plugin.tx_femanager//0100; type=text; label= Admin Name: Default admin name for all emails to the user
+        adminName = Nerdwolf
+        # cat=plugin.tx_femanager//0101; type=text; label= Admin Email: Default admin email for all emails to the user
+        adminEmail = donotreply@nerdwolf.eu
+        # cat=plugin.tx_femanager//0200; type=text; label= Upload folder: Define where to save images of the users
+        uploadFolder = fileadmin/users/
+        # cat=plugin.tx_femanager//0900; type=boolean; label= Include jQuery: Load and implement jQuery from external source (googleapis.com)
+        jQuery = 1
+        # cat=plugin.tx_femanager//0910; type=boolean; label= Include Twitter Bootstrap JS: Load and implement Twitter Bootstrap JavaScript from external source (bootstrapcdn.com)
+        bootstrap = 0
+        # cat=plugin.tx_femanager//0920; type=boolean; label= Include Twitter Bootstrap CSS: Load and implement Twitter Bootstrap CSS from external source (bootstrapcdn.com)
+        bootstrapCSS = 0
+        _enable.client = 0
+        _enable.server = 0
+    }
+}
+
+styles.content.loginform.redirectMode = userLogin, login
+styles.content.loginform.redirectPageLogin = 144
