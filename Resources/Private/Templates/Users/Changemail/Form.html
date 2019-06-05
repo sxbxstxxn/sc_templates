@@ -1,0 +1,60 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Userarea"/>
+<f:section name="main">
+
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">
+                <f:translate key="changemail.form.emailnow" />
+            </h4>
+            <div class="card-text">
+                {user.email}
+            </div>
+        </div>
+
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">
+                <f:translate key="changemail.form.title" />
+            </h4>
+            <div class="card-text">
+                <f:form action="submit" class="form" method="POST" object="{mailchange}" objectName="mailchange">
+
+                    <!-- EMAIL -->
+                    <div class="form-group">
+
+                        <label for="email"><f:translate key="changemail.form.newemail" /></label>
+                        <div class="input-group mb-3">
+                            <f:render partial="Icons/Email"/>
+                            <f:form.textfield type="email"
+                                              class="form-control{f:if(condition: '{errors.email}',then: ' is-invalid')}{f:if(condition: '{errors} && !{errors.email}',then: ' is-valid')}"
+                                              id="email" property="email" additionalAttributes="{required:'required'}"/>
+                        </div>
+                        
+                        <div class="text-danger">
+                            <f:for each="{errors.email}" as="errorcode">
+                                <div>
+                                    <f:render partial="Validation" section="error{errorcode}"/>
+                                </div>
+                            </f:for>
+                        </div>
+
+                        <small class="form-text text-muted"><f:translate key="changemail.form.note" /></small>
+
+                    </div>
+                    <!-- EMAIL -->
+
+                    <!-- SUBMIT BUTTON -->
+                    <f:form.submit class="btn btn-primary btn-lg" value="{f:translate(key: 'changemail.form.button')}"/>
+                    <!-- SUBMIT BUTTON -->
+
+                </f:form>
+            </div>
+        </div>
+
+    </div>
+
+</f:section>
+</html>

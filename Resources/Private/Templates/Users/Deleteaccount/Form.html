@@ -1,0 +1,19 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Userarea"/>
+<f:section name="main">
+
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title"><f:translate key="deleteaccount.form.title"/></h4>
+            <div class="card-text">
+                <p><f:translate key="deleteaccount.form.text"/></p>
+                <div class="alert alert-danger"><f:translate key="deleteaccount.form.warning"/></div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <f:link.action action="submit" class="btn btn-danger"><f:translate key="deleteaccount.form.button"/></f:link.action>
+        </div>
+    </div>
+
+</f:section>
+</html>

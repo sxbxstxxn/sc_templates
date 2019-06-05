@@ -1,0 +1,47 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default"/>
+<f:section name="main">
+
+
+    <f:if condition="{success}">
+        <div class="card login-box">
+            <div class="card-body">
+                <h4 class="card-title">
+                    <f:translate key="register.confirm.title" />
+                </h4>
+                <div class="card-text">
+                    <p><f:translate key="register.confirm.message" /></p>
+
+                    <p>
+                        <b><f:translate key="register.confirm.username" />:</b> {user.username}<br>
+                        <b><f:translate key="register.confirm.email" />:</b> {user.email}
+                    </p>
+
+                    <!-- SHOW THE LINK, IF REDIRECT IS GIVEN -->
+                    <f:if condition="{settings.successLink}">
+                        <f:link.action action="redirect" class="btn btn-primary btn-lg">
+                            <f:translate key="register.confirm.next" />
+                        </f:link.action>
+                    </f:if>
+                    <!-- SHOW THE LINK, IF REDIRECT IS GIVEN -->
+                </div>
+            </div>
+        </div>
+    </f:if>
+
+    <f:if condition="!{success}">
+        <div class="card login-box">
+            <div class="card-body">
+                <h4 class="card-title">
+                    <f:translate key="register.confirm.error.title" />
+                </h4>
+                <div class="card-text">
+                    <p><f:translate key="register.confirm.error.message" /></p>
+                </div>
+            </div>
+        </div>
+    </f:if>
+
+
+</f:section>
+</html>

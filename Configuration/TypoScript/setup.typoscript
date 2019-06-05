@@ -227,6 +227,13 @@ plugin.tx_felogin_pi1 {
     showLogoutFormAfterLogin = 0
 }
 
+plugin.tx_users.view {
+    templateRootPaths.0 = EXT:sc_template/Resources/Private/Templates/Users/
+    partialRootPaths.0 = EXT:sc_template/Resources/Private/Partials/Users/
+    layoutRootPaths.0 = EXT:sc_template/Resources/Private/Layouts/Users/
+}
+
+
 #FE MANAGER Config
 module.tx_femanager.settings.configPID = 14
 
