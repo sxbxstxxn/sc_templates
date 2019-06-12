@@ -45,28 +45,40 @@
     </div>
 </f:section>
 
-
 <f:section name="nonauthenticated">
 
             <f:form action="login" class="form row" method="POST">
 
-
-                <f:if condition="{error} == 1">
-                <!-- ERROR -->
-                    <div class="alert alert-danger">
-                        <f:translate key="login.error"/>
+                <f:if condition="{error} == 1 || {error} == 2">
+                    <div class="login-error row">
+                        <div class="col s12">
+                            <div class="card alert">
+                                <div class="card-content">
+                                    <f:if condition="{error} == 1">
+                                        <span class="card-title">Fehler (#1)</span>
+                                        <p><f:translate key="login.error"/></p>
+                                    </f:if>
+                                    <f:if condition="{error} == 2">
+                                        <span class="card-title">Fehler (#2)</span>
+                                        <p><f:translate key="login.error2"/></p>
+                                    </f:if>
+                                </div>
+                                <div class="card-action">
+                                    <!-- SPECIAL LINKS (Forgot pass) -->
+                                    <f:if condition="{settings.forgotpassPid}">
+                                        <f:link.page pageUid="{settings.forgotpassPid}" >
+                                            <f:render partial="Icons/PasswordStandalone"/>
+                                            <f:translate key="login.forgotpass"/>
+                                        </f:link.page>
+                                    </f:if>
+                                    <!-- SPECIAL LINKS (Forgot pass) -->
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </f:if>
-                <f:if condition="{error} == 2">
-                    <div class="alert alert-danger">
-                        <f:translate key="login.error2"/>
-                    </div>
-                <!-- ERROR -->
-                </f:if>
 
-
-                <!-- USERNAME/EMAIL -->
-                <div class="input-field col l6 m12 s12">
+                <div class="login-username input-field col l6 m12 s12">
                     <f:render partial="Icons/User"/>
                     <f:form.textfield id="username" placeholder="testplaceholder" name="username" additionalAttributes="{required:'required'}"/>
                     <label for="username">
@@ -80,45 +92,27 @@
                         </f:if>
                     </label>
                 </div>
-                <!-- USERNAME/EMAIL -->
 
-                <!-- PASSWORD -->
-                <div class="input-field col l6 m12 s12">
+                <div class="login-pw input-field col l6 m12 s12">
                     <f:render partial="Icons/Password"/>
                     <f:form.password placeholder="testplaceholder" id="password" name="password" additionalAttributes="{required:'required'}"/>
                     <label for="password">
                         <f:translate key="login.password"/>
                     </label>
                 </div>
-                <!-- PASSWORD -->
 
 
                 <div class="col s12">
-                    <!-- SPECIAL LINKS (registration) -->
-                    <div class="col s4">
-                        <f:if condition="{settings.registerPid}">
-                            <f:link.page pageUid="{settings.registerPid}">
-                                <f:render partial="Icons/RegisterStandalone"/>
-                                <f:translate key="login.register"/>
-                            </f:link.page>
-                        </f:if>
-                    </div>
-                    <!-- SPECIAL LINKS (registration) -->
-                    <!-- SPECIAL LINKS (Forgot pass) -->
-                    <div class="col s4">
-                        <f:if condition="{settings.forgotpassPid} || {settings.registerPid}">
-                            <f:if condition="{settings.forgotpassPid}">
-                                <f:link.page pageUid="{settings.forgotpassPid}">
-                                    <f:render partial="Icons/PasswordStandalone"/>
-                                    <f:translate key="login.forgotpass"/>
-                                </f:link.page><br/>
-                            </f:if>
-                        </f:if>
-                    </div>
-                    <!-- SPECIAL LINKS (Forgot pass) -->
-                    <!-- SUBMIT BUTTON -->
-                    <f:form.submit class="loginsubmit btn waves-effect waves-light col s4" value="{f:translate(key: 'login.submit')}"/>
-                    <!-- SUBMIT BUTTON -->
+                    <f:if condition="{settings.registerPid}">
+                        <f:link.page pageUid="{settings.registerPid}" class="col s5">
+                            <f:translate key="login.register"/>
+                        </f:link.page>
+                    </f:if>
+
+                    <f:form.button class="loginsubmit waves-effect waves-light btn col s5 offset-s2" type="submit">
+                        {f:translate(key: 'login.submit')}
+                        <i class="material-icons right">send</i>
+                    </f:form.button>
                 </div>
 
             </f:form>

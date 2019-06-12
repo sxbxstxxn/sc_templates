@@ -47,6 +47,10 @@ select:-webkit-autofill:focus {
     color:#777885 !important;
 }
 
+.input-field .prefix.active {
+    color:#2E9CCA;
+}
+
 .input-field > label {
     color: #AAABB8 !important;
 }
@@ -72,6 +76,13 @@ select:-webkit-autofill:focus {
 }
 .btn:focus, .btn:active {
     box-shadow: none;
+}
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
+    color:#AAABB8;
+}
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating):hover {
+    color:#999AA7;
 }
 /*MATERIALIZE END*/
 
@@ -124,6 +135,11 @@ main {
     padding-top:25px;
     padding-bottom:25px;
 }
+
+.card.alert {
+    background-color:#B40404;
+}
+
 /* MAIN END */
 
 

@@ -1,12 +1,1 @@
-<f:if condition="{settings.iconsInTheForms} == 0">
-    <f:else if="{settings.iconsInTheForms} == 1">
-        <div class="input-group-prepend">
-            <span class="input-group-text"><i class="email"><img src="{f:uri.image(src: '{settings.iconFile.email}', width: '{settings.iconSize.width}', height: '{settings.iconSize.height}')}" width="{settings.iconSize.width}" height="{settings.iconSize.height}"></i></span>
-        </div>
-    </f:else>
-    <f:else if="{settings.iconsInTheForms} == 2">
-        <div class="input-group-prepend">
-            <span class="input-group-text"><i class="{settings.iconClass.email}"></i></span>
-        </div>
-    </f:else>
-</f:if>
+<i class="material-icons prefix">email</i>
