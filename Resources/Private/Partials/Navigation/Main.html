@@ -1,6 +1,7 @@
 <nav>
   <div class="nav-wrapper">
-    <a href="/" class="brand-logo"></a>
+    <a href="/" class="nwlogo brand-logo"></a>
+    <div class="usernameinnav brand-logo center"><f:cObject typoscriptObjectPath="lib.username" /></div>
     <a href="/" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <f:for each="{menu}" as="main">
@@ -9,7 +10,6 @@
     </ul>
   </div>
 </nav>
-
 <ul class="sidenav" id="mobile-demo">
   <f:for each="{menu}" as="main">
     <li {f:if(condition: '{main.active}', then: 'class="active"')}><a href="{main.link}">{main.title}</a> </li>

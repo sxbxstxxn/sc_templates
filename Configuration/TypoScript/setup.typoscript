@@ -22,6 +22,10 @@ lib.dynamicContent {
    90 = RESTORE_REGISTER
 }
 
+lib.username = COA
+lib.username.10 = TEXT
+lib.username.10.data = TSFE:fe_user|user|username
+
 #SETUP
 page = PAGE
 page.10 = FLUIDTEMPLATE
@@ -193,40 +197,6 @@ lib.contentElement {
    }
 }
 
-# FE LOGIN Config
-plugin.tx_felogin_pi1 {
-    storagePid = {$sctemplate_feuserstorage}
-    templateFile = EXT:sc_template/Resources/Private/Templates/FELogin/FrontendLogin.html
-
-    showPermaLogin = 1
-    showForgotPasswordLink = 1
-    showLogoutFormAfterLogin = 1
-    linkConfig.ATagParams = class="waves-effect waves-light btn col s3"
-    forgot.typolink.title = Passwort vergessen?
-    forgetLinkHashValidTime = 24
-    dateFormat = d.M Y - H:i
-
-    email_from = donotreply@nerdwolf.eu
-    email_fromName = Nerdwolf
-    replyTo = donotreply@nerdwolf.eu
-
-    logoutMessage_stdWrap.wrap = <div class="col s12 msg-logout">|</div>
-    welcomeMessage_stdWrap.wrap = <div class="col s12 msg-welcome">|</div>
-    successMessage_stdWrap.wrap = <div class="col s12 msg-success">|</div>
-    errorMessage_stdWrap.wrap = <div class="col s12 msg-error">|</div>
-    forgotMessage_stdWrap.wrap = <div class="col s12 msg-forgot">|</div>
-    forgotErrorMessage_stdWrap.wrap = <div class="col s12 msg-forgoterror">|</div>
-    changePasswordMessage_stdWrap.wrap = <div class="col s12 msg-changepassword">|</div>
-    changePasswordDoneMessage_stdWrap.wrap = <div class="col s12 msg-changepassworddone">|</div>
-    changePasswordNotEqualMessage_stdWrap.wrap = <div class="col s12 msg-changepasswordnotequal">|</div>
-    changePasswordTooShortMessage_stdWrap.wrap = <div class="col s12 msg-changepasswordtooshort">|</div>
-    changePasswordNotValidMessage_stdWrap.wrap = <div class="col s12 msg-changepasswordnotvalid">|</div>
-
-    redirectMode = login
-    redirectPageLogin = 144
-    showLogoutFormAfterLogin = 0
-}
-
 plugin.tx_users.view {
     templateRootPaths.0 = EXT:sc_template/Resources/Private/Templates/Users/
     partialRootPaths.0 = EXT:sc_template/Resources/Private/Partials/Users/
@@ -240,8 +210,4 @@ plugin.tx_users._LOCAL_LANG.de {
     #register.form.loginlink = Login
     email.footer = © 2019 Sebastian Christoph
 }
-
-
-#FE MANAGER Config
-module.tx_femanager.settings.configPID = 14
 
