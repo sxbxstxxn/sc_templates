@@ -82,6 +82,14 @@ page.10 {
               }
             }
         }
+        30 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+        30 {
+          special = rootline
+          special.range = 0|-1
+          special.value = {$sctemplate_rootpageid}
+          includeNotInMenu = 1
+          as = breadcrumbmenu
+        }
     }
 }
 

@@ -90,6 +90,10 @@ input:-webkit-autofill:active {
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating):hover {
     color:#999AA7;
 }
+.z-depth-1, nav, .card-panel, .card, .toast, .btn, .btn-large, .btn-small, .btn-floating, .dropdown-content, .collapsible, .sidenav {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
 /*MATERIALIZE END*/
 
 body {
