@@ -5,25 +5,18 @@
 
     <f:if condition="{success}">
         <div class="row">
-                <h4>
-                    <f:translate key="register.confirm.title" />
-                </h4>
-                <div class="text">
-                    <p><f:translate key="register.confirm.message" /></p>
-                    <p>
-                        <b><f:translate key="register.confirm.username" />:</b> {user.username}<br>
-                        <b><f:translate key="register.confirm.email" />:</b> {user.email}
-                    </p>
-
-
-                    <f:if condition="{settings.successLink}">
-                        <f:link.action action="redirect" class="waves-effect waves-light btn col s4 offset-s8">
-                            <f:translate key="register.confirm.next" />
-                        </f:link.action>
-                    </f:if>
-
+                <h4><f:translate key="register.confirm.title" /></h4>
+                <div class="row"><f:translate key="register.confirm.message" /></div>
+                <div class="row">
+                    <b><f:translate key="register.confirm.username" />:</b> {user.username}<br>
+                    <b><f:translate key="register.confirm.email" />:</b> {user.email}
                 </div>
-            </div>
+
+                <f:if condition="{settings.successLink}">
+                    <f:link.action action="redirect" class="waves-effect waves-light btn col s4 offset-s8">
+                        <f:translate key="register.confirm.next" />
+                    </f:link.action>
+                </f:if>
         </div>
     </f:if>
 

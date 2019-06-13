@@ -2,28 +2,22 @@
 <f:layout name="Default"/>
 <f:section name="main">
 
-    <div class="card login-box">
-        <div class="card-body">
-            <h4 class="card-title">
-                <f:translate key="forgot.changeformsubmit.title"/>
-            </h4>
-            <div class="card-text">
-                <p>
-                    <f:translate key="forgot.changeformsubmit.message"/>
-                </p>
+    <div class="row">
 
-                <!-- SHOW THE LINK, IF REDIRECT IS GIVEN -->
-                <f:if condition="{settings.successLink}">
-                    <f:link.action action="redirect" class="btn btn-primary btn-lg">
-                        <f:translate key="forgot.changeformsubmit.button"/>
-                    </f:link.action>
-                </f:if>
-                <!-- SHOW THE LINK, IF REDIRECT IS GIVEN -->
+        <h4><f:translate key="forgot.changeformsubmit.title"/></h4>
+        <div class="text">
+            <p><f:translate key="forgot.changeformsubmit.message"/></p>
 
-            </div>
+            <!-- SHOW THE LINK, IF REDIRECT IS GIVEN -->
+            <f:if condition="{settings.successLink}">
+                <f:link.action action="redirect" class="waves-effect waves-light btn col s12 m6  l4 offset-m6 offset-l8">
+                    <f:translate key="forgot.changeformsubmit.button"/>
+                </f:link.action>
+            </f:if>
+            <!-- SHOW THE LINK, IF REDIRECT IS GIVEN -->
+
         </div>
     </div>
-
 
 </f:section>
 </html>

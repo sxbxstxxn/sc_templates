@@ -4,14 +4,12 @@
 
     <!-- NOT ALLOWED -->
     <f:if condition="!{allowed}">
-        <div class="card login-box">
-            <div class="card-body">
-                <h4 class="card-title">
-                    <f:translate key="forgot.change.title"/>
-                </h4>
-                <div class="card-text">
-                    <f:translate key="forgot.change.error"/>
-                </div>
+        <div class="row">
+            <h4>
+                <f:translate key="forgot.change.title"/>
+            </h4>
+            <div class="text">
+                <f:translate key="forgot.change.error"/>
             </div>
         </div>
     </f:if>
@@ -20,67 +18,63 @@
 
     <!-- ALLOWED -->
     <f:if condition="{allowed}">
-        <div class="card login-box">
-            <div class="card-body">
-                <h4 class="card-title">
+        <div class="row">
+
+                <h4>
                     <f:translate key="forgot.change.title"/>
                 </h4>
-                <div class="card-text">
+                <div class="text">
 
                     <!-- Error message: Input not valid (password mismatch or strlen not 6) -->
                     <f:if condition="{error} == 1">
-                        <div class="alert alert-danger"><f:translate key="forgot.change.error2"/></div>
+                        <div class="login-error row">
+                            <div class="col s12">
+                                <div class="card alert">
+                                    <div class="card-content">
+                                        <span class="card-title">Fehler (#3)</span>
+                                        <p><f:translate key="forgot.change.error2"/></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </f:if>
 
 
                     <f:form action="changeformsubmit" class="form" method="POST">
+                        <p><f:translate key="forgot.change.text"/></p>
 
-                        <p>
-                            <f:translate key="forgot.change.text"/>
-                        </p>
-
-
-                        <!-- PASSWORD -->
-                        <div class="form-group">
+                        <div class="input-field col l6 m12 s12">
+                            <f:render partial="Icons/Password"/>
+                            <f:form.password class="form-control" id="password" name="password"
+                                             additionalAttributes="{required:'required'}"/>
                             <label for="password">
                                 <f:translate key="forgot.change.password"/>
                             </label>
-                            <div class="input-group mb-3">
-                                <f:render partial="Icons/Password"/>
-                                <f:form.password class="form-control" id="password" name="password"
-                                                 additionalAttributes="{required:'required'}"/>
-                            </div>
-
                         </div>
-                        <!-- PASSWORD -->
 
-
-                        <!-- PASSWORD -->
-                        <div class="form-group">
+                        <div class="input-field col l6 m12 s12">
+                            <f:render partial="Icons/Password"/>
+                            <f:form.password class="form-control" id="passwordrepeat" name="passwordrepeat"
+                                             additionalAttributes="{required:'required'}"/>
                             <label for="passwordrepeat">
                                 <f:translate key="forgot.change.passwordrepeat"/>
                             </label>
-                            <div class="input-group mb-3">
-                                <f:render partial="Icons/Password"/>
-                                <f:form.password class="form-control" id="passwordrepeat" name="passwordrepeat"
-                                                 additionalAttributes="{required:'required'}"/>
-                            </div>
-
                         </div>
-                        <!-- PASSWORD -->
 
                         <f:form.textfield type="hidden" name="uid" value="{uid}"/>
                         <f:form.textfield type="hidden" name="forgotHash" value="{forgotHash}"/>
 
 
                         <!-- SUBMIT BUTTON -->
-                        <f:form.submit class="btn btn-primary btn-lg"
-                                       value="{f:translate(key: 'forgot.change.submit')}"/>
+                        <f:form.button class="waves-effect waves-light btn col s12 m6  l4 offset-m6 offset-l8" type="submit">
+                            {f:translate(key: 'forgot.change.submit')}
+                            <i class="material-icons right">send</i>
+                        </f:form.button>
                         <!-- SUBMIT BUTTON -->
 
                     </f:form>
                 </div>
-            </div>
+
 
 
         </div>

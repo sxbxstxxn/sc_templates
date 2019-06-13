@@ -238,6 +238,7 @@ plugin.tx_users.view {
 plugin.tx_users._LOCAL_LANG.de {
     #login.register = Registrieren
     #register.form.loginlink = Login
+    email.footer = © 2019 Sebastian Christoph
 }
 
 

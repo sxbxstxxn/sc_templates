@@ -80,22 +80,27 @@
 
                 <div class="login-username input-field col l6 m12 s12">
                     <f:render partial="Icons/User"/>
-                    <f:form.textfield id="username" placeholder="testplaceholder" name="username" additionalAttributes="{required:'required'}"/>
-                    <label for="username">
-                        <f:if condition="{settings.allowEmailLogin}">
-                            <f:then>
+
+                    <f:if condition="{settings.allowEmailLogin}">
+                        <f:then>
+                            <f:form.textfield id="username" name="username" additionalAttributes="{required:'required'}"/>
+                            <label for="username">
                                 <f:translate key="login.usernameemail"/>
-                            </f:then>
-                            <f:else>
+                            </label>
+                        </f:then>
+                        <f:else>
+                            <f:form.textfield id="username" name="username" additionalAttributes="{required:'required'}"/>
+                            <label for="username">
                                 <f:translate key="login.username"/>
-                            </f:else>
-                        </f:if>
-                    </label>
+                            </label>
+                        </f:else>
+                    </f:if>
+
                 </div>
 
                 <div class="login-pw input-field col l6 m12 s12">
                     <f:render partial="Icons/Password"/>
-                    <f:form.password placeholder="testplaceholder" id="password" name="password" additionalAttributes="{required:'required'}"/>
+                    <f:form.password id="password" name="password" additionalAttributes="{required:'required'}"/>
                     <label for="password">
                         <f:translate key="login.password"/>
                     </label>
@@ -104,12 +109,12 @@
 
                 <div class="col s12">
                     <f:if condition="{settings.registerPid}">
-                        <f:link.page pageUid="{settings.registerPid}" class="col s5">
+                        <f:link.page pageUid="{settings.registerPid}" class="col s6 m4">
                             <f:translate key="login.register"/>
                         </f:link.page>
                     </f:if>
 
-                    <f:form.button class="loginsubmit waves-effect waves-light btn col s5 offset-s2" type="submit">
+                    <f:form.button class="loginsubmit waves-effect waves-light btn col s6 m4 offset-m4" type="submit">
                         {f:translate(key: 'login.submit')}
                         <i class="material-icons right">send</i>
                     </f:form.button>

@@ -30,15 +30,21 @@ a:hover {
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
-textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover,
-textarea:-webkit-autofill:focus,
-select:-webkit-autofill,
-select:-webkit-autofill:hover,
-select:-webkit-autofill:focus {
-    -webkit-text-fill-color: #AAABB8 !important;;
-    -webkit-box-shadow: 0 0 0px 1000px #464866 inset !important;
-    /*color:#AAABB8 !important;*/
+input:-webkit-autofill:active {
+    -webkit-animation: autofill 0s forwards;
+    animation: autofill 0s forwards;
+}
+@keyframes autofill {
+    100% {
+        background: transparent;
+        color: inherit;
+    }
+}
+@-webkit-keyframes autofill {
+    100% {
+        background: transparent;
+        color: inherit;
+    }
 }
 
 /*MATERIALIZE ANGABEN ÄNDERN*/
@@ -147,8 +153,16 @@ main {
 .loginsubmit {
     /*float:right;*/
 }
+
 .msg-error {
     color:#DD0000;
+}
+.forgotsubmit {
+    margin-top:25px;
+}
+.userforgot h4,
+.userforgot .text {
+    text-align:center;
 }
 /*LOGIN FORM END*/
 

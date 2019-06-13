@@ -80,25 +80,20 @@
 
             <f:if condition="{optionalFields -> f:count()} >= 1">
                 <f:for each="{optionalFields}" as="optionalField" iteration="objIterator">
-                    <f:if condition="{objIterator.cycle} % 2">
-                        <f:then><div class="row"></f:then>
-                    </f:if>
-                    <f:render partial="OptionalFields/{optionalField.id}"
-                              arguments="{errors:errors,field:optionalField}"/>
-                    <f:if condition="{objIterator.cycle} % 2">
-                        <f:then></f:then>
-                        <f:else></div></f:else>
+                    <f:if condition="{optionalField.id}">
+                        <f:render partial="OptionalFields/{optionalField.id}"
+                                  arguments="{errors:errors,field:optionalField}"/>
                     </f:if>
                 </f:for>
             </f:if>
 
             <div class="row">
                 <f:if condition="{settings.loginPid}">
-                    <f:link.page pageUid="{settings.loginPid}"  class="col s4">
+                    <f:link.page pageUid="{settings.loginPid}"  class="col m4 s6">
                         <f:translate key="register.form.loginlink" />
                     </f:link.page>
                 </f:if>
-                <f:form.button class="registersubmit waves-effect waves-light btn col s4 offset-s4" type="submit">
+                <f:form.button class="registersubmit waves-effect waves-light btn col m4 s6 offset-m4" type="submit">
                     {f:translate(key: 'register.form.button')}
                     <i class="material-icons right">send</i>
                 </f:form.button>
